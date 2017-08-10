@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" version="2.4">
+
+    <display-name>clinicPet</display-name>
+
+    <description>
+        simple web application
+    </description>
+
+    <servlet>
+        <servlet-name>ClinicServlet</servlet-name>
+        <servlet-class>ClinicServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ClinicServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+</web-app>
