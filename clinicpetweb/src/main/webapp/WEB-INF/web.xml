@@ -16,5 +16,15 @@
         <servlet-name>ClinicServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>UserViewServlet</servlet-name>
+        <url-pattern>/user/view</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>UserCreateServlet</servlet-name>
+        <url-pattern></url-pattern>
+    </servlet-mapping>
 
 </web-app>

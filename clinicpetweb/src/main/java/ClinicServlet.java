@@ -12,8 +12,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class ClinicServlet extends HttpServlet {
 
-    final List<Pet> pets = new CopyOnWriteArrayList<Pet>();
-
+    //final List<Pet> pets = new CopyOnWriteArrayList<Pet>();
+    final Clinic clinic = new Clinic();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -27,10 +27,12 @@ public class ClinicServlet extends HttpServlet {
                         "</head>"+
                         "<body>"+
                         "<form action='"+request.getContextPath()+"/'  method='post'>"+
-                        "Name : <input type = 'text' name='name'>"+
+                        "Client's name : <input type = 'text' name='client'><br>"+
+                        "<form action='"+request.getContextPath()+"/'  method='post'>"+
+                        "Pet's name : <input type = 'text' name='name'>"+
                         "<input type='submit' value='Submit'>"+
                         "</form>"+
-                        this.viewPets()+"<br>"+
+                        this.viewPets()+
                         "</body>"+
                         "</html>"
         );
@@ -39,10 +41,11 @@ public class ClinicServlet extends HttpServlet {
 
     private String viewPets() {
         StringBuilder sb = new StringBuilder();
-        sb.append("<p>Pets</p>");
-        sb.append("<tr><td style='border : 1px solid black'>");
-        for (Pet pet : pets){
-            sb.append("<tr><td style='border : 1px solid black'>").append(pet.getName()).append("</td></tr>");
+        //sb.append("<p>Pets</p>");
+        sb.append("<table style='border : 1px solid black'>");
+        for (Client client : clinic.getClients()){
+            sb.append("<th>").append(client.getId()).append("</th>");
+            sb.append("<tr><td style='border : 1px solid black'>").append(client.getPet().getName()).append("</td></tr>");
         }
         sb.append("</table>");
         return sb.toString();
@@ -50,7 +53,9 @@ public class ClinicServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.pets.add(new Dog (req.getParameter("name")));
+       // this.pets.add(new Dog (req.getParameter("name")));
+        clinic.addClient(new Client(req.getParameter("client"), new Animal(req.getParameter("name"))));
+
         doGet(req, resp);
     }
 

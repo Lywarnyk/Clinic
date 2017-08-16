@@ -6,15 +6,15 @@ import java.util.List;
  */
 public class Clinic {
 
-    private final Client[] clients;
+    private final List<Client> clients;
 
-    public Clinic (final int size){
-        this.clients = new Client[size];
+    public Clinic (){
+        this.clients = new ArrayList<>();
 
     }
 
-    public void addClient(final int position, final Client client){
-        this.clients[position] = client;
+    public void addClient( final Client client){
+        this.clients.add(client);
     }
 
 
@@ -30,7 +30,7 @@ public class Clinic {
          return  clientsByName;
      }
 
-    public Client[] getClients() {
+    public List<Client> getClients() {
         return clients;
     }
 
