@@ -18,7 +18,7 @@ public class UserViewServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("users", this.USER_CACHE.values());
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/views/user/UserVeiw.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/views/user/UserView.jsp");
         dispatcher.forward(req,resp);
     }
 }
