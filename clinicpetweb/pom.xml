@@ -46,12 +46,7 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
-
-        <dependency>
-            <groupId>home</groupId>
-            <artifactId>se</artifactId>
-        </dependency>
-
+        
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
@@ -69,6 +64,7 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
         </dependency>
+
         <dependency>
             <groupId>home</groupId>
             <artifactId>se</artifactId>

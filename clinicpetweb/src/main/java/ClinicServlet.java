@@ -12,7 +12,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class ClinicServlet extends HttpServlet {
 
-    //final List<Pet> pets = new CopyOnWriteArrayList<Pet>();
+    final List<Pet> pets = new CopyOnWriteArrayList<Pet>();
     final Clinic clinic = new Clinic();
 
     @Override
