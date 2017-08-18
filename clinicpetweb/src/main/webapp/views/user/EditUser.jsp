@@ -24,7 +24,7 @@
             <tr>
                 <td align="right">Email : </td>
                 <td>
-                    <input type="text" name="email" value="$user.email">
+                    <input type="text" name="email" value="${user.email}">
                 </td>
             </tr>
             <tr>

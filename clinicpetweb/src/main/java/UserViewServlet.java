@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class UserViewServlet extends HttpServlet{
 
-    private final UserCache USER_CACHE = UserCache.getInstance();
+    private static final UserCache USER_CACHE = UserCache.getInstance();
 
 
     @Override

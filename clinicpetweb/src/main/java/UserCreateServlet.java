@@ -18,7 +18,7 @@ public class UserCreateServlet extends HttpServlet {
     private final UserCache USER_CACHE = UserCache.getInstance();
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.USER_CACHE.add(new User(this.ids.incrementAndGet(),req.getParameter("login"), req.getParameter("email")));
         resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/user/view"));
     }
